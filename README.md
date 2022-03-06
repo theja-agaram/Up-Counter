@@ -1,2 +1,2 @@
 # Mixed Signal Circuit Design and Simulation Marathon
-# Up-Counter
+# 4-bit Asynchronous Up Counter
