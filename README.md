@@ -48,8 +48,11 @@ The following is the schematic in eSim:
 module theja_async4bitupcounter(input clk,input [3:0]rst,output [3:0]q,qb);
 
 jk_ff t1(1'b1,1'b1,rst[0],clk,q[0],qb[0]);
+
 jk_ff t2(1'b1,1'b1,rst[1],qb[0],q[1],qb[1]);
+
 jk_ff t3(1'b1,1'b1,rst[2],qb[1],q[2],qb[2]);
+
 jk_ff t4(1'b1,1'b1,rst[3],qb[2],q[3],qb[3]);
 
 endmodule
@@ -57,16 +60,21 @@ endmodule
 
  
 module jk_ff(input j,k,rst,clk,output reg q,qb);
+
 always @(posedge clk or posedge rst)
 begin
+
 if(rst)
-begin q=1'b0;qb=1'b1; end
+begin q=1'b0;qb=1'b1; end 
 else if({j,k} == 2'b11)
+
 begin q=~q;qb=~q; end
 else if({j,k} == 2'b00)
 begin q=q;qb=~q; end
+
 else if({j,k} == 2'b01)
 begin q=0;qb=1; end
+
 else if({j,k} == 2'b10)
 begin q=1;qb=0; end
 end
@@ -90,25 +98,30 @@ jk_ff t4(1'b1,1'b1,rst[3],qb[2],q[3],qb[3]);
 endmodule
  
 module jk_ff(input j,k,rst,clk,output reg q,qb);
+
 always @(posedge clk or posedge rst)
 begin
 if(rst)
 begin q=1'b0;qb=1'b1; end
 else if({j,k} == 2'b11)
 begin q=~q;qb=~q; end
+
 else if({j,k} == 2'b00)
 begin q=q;qb=~q; end
 else if({j,k} == 2'b01)
 begin q=0;qb=1; end
+
 else if({j,k} == 2'b10)
 begin q=1;qb=0; end
 end
 endmodule
+
 //Top Module Code Starts here:
 	module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, output logic passed, output logic failed);
 		logic  [3:0] rst;//input
 		logic  [3:0] q;//output
 		logic  [3:0] qb;//output
+
 //The $random() can be replaced if user wants to assign values
 		assign rst = reset;
 		theja_async4bitupcounter theja_async4bitupcounter(.clk(clk), .rst(rst), .q(q), .qb(qb));
