@@ -171,4 +171,4 @@ Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 Sumanto Kar, eSim Team, FOSSEE
 # References
 1.V. Sravaran, V. Kannan, "Low power Asynchronous up counter using CNTFET," 2012 International Conference of computer Application (0975 – 8887) Volume 51– No.2, August-2012. 
-https://github.com/Eyantra698Sumanto/Two-in-One-Low-power-XOR-XNOR-Gate.git
+
