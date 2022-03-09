@@ -132,7 +132,8 @@ endmodule
 endmodule
 
 # Makerchip Plots
-![image](https://user-images.githubusercontent.com/79637087/157172353-a53e6a2c-b0be-4345-8e67-c470cb822381.png)
+![image](https://user-images.githubusercontent.com/79637087/157403355-ce55a4aa-e638-4872-bd83-548449792f4c.png)
+
 
 
 Netlists
